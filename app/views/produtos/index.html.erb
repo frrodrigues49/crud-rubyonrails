@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+<% end %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Descrição</th>
+        <th class="text-center">Preço</th>
+        <th class="text-center">Quantidade</th>
+        <th class="text-center" colspan="2">Açoes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @produtos %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Criar", new_produto_path, class: "btn btn-success" %>
